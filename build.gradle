@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'at.ac.tgm.pdamianik.sem8.sew'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task client(type:JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "at.ac.tgm.pdamianik.sem8.sew.client.Client"
+    standardInput = System.in
+}
+
+task server(type:JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "at.ac.tgm.pdamianik.sem8.sew.server.Server"
+}
