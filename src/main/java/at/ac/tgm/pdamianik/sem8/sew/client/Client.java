@@ -49,7 +49,7 @@ public record Client(String host, int port, String username) {
 						System.out.println("This answer was wrong!");
 					}
 					Statistic statistic = result.statistic();
-					System.out.println("Statistic: " + statistic.getCorrect() + " correct, " + statistic.getWrong() + " wrong, " + statistic.getTodo() + " pending");
+					System.out.println("Statistic: " + statistic.getCorrect() + " correct (" + statistic.getCorrectPercent() + "%), " + statistic.getWrong() + " wrong, " + statistic.getTodo() + " pending");
 					if (statistic.getTodo() == 0) {
 						break;
 					}

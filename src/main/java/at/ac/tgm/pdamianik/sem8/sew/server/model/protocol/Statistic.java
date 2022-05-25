@@ -91,6 +91,10 @@ public class Statistic implements Serializable, Cloneable {
 		this.todo = todo;
 	}
 
+	public int getCorrectPercent() {
+		return (int)(correct/(correct*1d+wrong)*100);
+	}
+
 	/**
 	 * This function returns a new Statistic object that is a copy of the current Statistic object.
 	 *
